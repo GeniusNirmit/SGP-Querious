@@ -26,17 +26,17 @@ const Create = () => {
 
     return(
         <div className="container">
-            <h1>Ask a public question</h1>
+            <h1>Ask a question</h1>
             <form className="box box-shdow theme-adjust" onSubmit = {askQuestion}>
                 <div className="form-group">
                     <p className="form-label">Title</p>
-                    <p>Be specific and imagine you're asking a question to another person</p>
-                    <input type="text" className="form-control" placeholder = "e.g. Is there an R function for finding the index of an element in a vector?"
+                    <p>Enter the Title of your question</p>
+                    <input type="text" className="form-control" placeholder = "e.g. Hello world in C++?"
                     value = {title} onChange = {({target: {value}}) => setTitle(value)} />
                 </div>
                 <div className="form-group my-2">
                     <p className="form-label">Body</p>
-                    <p>Include all the information someone would need to answer your question (in markdown):</p>
+                    <p>Detailed description about your question:</p>
                     <textarea className="form-control" rows="10" value = {body} onChange = {({target: {value}}) => setBody(value)}></textarea>
                 </div>
                 <div className="form-group">
