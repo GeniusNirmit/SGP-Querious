@@ -22,7 +22,7 @@ const Register  = () =>{
 
     const RegisterUser = e => {
         e.preventDefault();
-        Axios.post(`${process.env.REACT_APP_SERVER_URL}/users/register`, {
+        return ( Axios.post(`${process.env.REACT_APP_SERVER_URL}/users/register`, {
             "name": username,
             "password": password,
             "email": email
@@ -32,7 +32,7 @@ const Register  = () =>{
             token.set('token', res.data.token, {path: "/", maxAge: 604800})
             setToHome(true)
         })
-        .catch(err => {setErrorMessage(err.response.data); console.log(err.response)});
+        .catch(err => {setErrorMessage(err.response.data); console.log(err.response)}));
     }
 
     return(
